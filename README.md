@@ -1,41 +1,35 @@
 # micrograd- A Tiny Autograd Engine
-This project implements a tiny autograd engine (`micrograd`) and a simple neural network library built on top of it. The engine supports automatic differentiation, and the neural network library can be used to train models on small datasets.
+This module builds a tiny **autograd engine** (short for **automatic gradient**), which implements the **backpropagation algorithm**. This algorithm was prominently popularized for training neural networks in the seminal 1986 paper, *"Learning Internal Representations by Error Propagation"* by Rumelhart, Hinton, and Williams.
 
 ## Table of Contents
 
 1. [Overview](#overview)
 2. [Features](#features)
-3. [Installation](#installation)
-4. [License](#license)
 ---
 
 ## Overview
+The code we develop here is the **core of neural network training**—it enables us to calculate how to update the parameters of a neural network to improve its performance on a given task, such as **next-token prediction** in autoregressive language models.
 
-`micrograd` is a minimalistic autograd engine that allows you to compute gradients of scalar-valued functions. It is inspired by PyTorch's autograd system but is much simpler and designed for educational purposes.
-
+The same algorithm is used in all modern deep learning libraries, such as **PyTorch**, **TensorFlow**, and **JAX**, except that those libraries are far more optimized and feature-rich.
 The project also includes a neural network library (`nn.py`) that uses the `micrograd` engine to define and train neural networks. The library supports fully connected layers, activation functions (e.g., `tanh`), and basic optimization techniques like stochastic gradient descent (SGD).
 
 ---
 ## Features
 
-- **Autograd Engine**:
-  - Supports basic operations like addition, multiplication, and activation functions.
-  - Computes gradients using reverse-mode automatic differentiation (backpropagation).
+1. **Autograd Engine (micrograd)**:
+   - A minimalistic implementation of automatic differentiation, which computes gradients for scalar-valued functions.
+   - The backbone of neural network training, enabling efficient parameter updates via backpropagation.
 
-- **Neural Network Library**:
-  - Defines neurons, layers, and multi-layer perceptrons (MLPs).
-  - Supports customizable architectures (e.g., number of layers, neurons per layer).
-  - Includes a simple training loop with SGD.
+2. **Neural Network (NN) with 1 Hidden Layer (MLP)**:
+   - A simple **Multi-Layer Perceptron (MLP)** built on top of the autograd engine.
+   - Demonstrates how to define and train a neural network for a classification task.
 
-- **Visualization**:
-  - Visualizes the decision boundary of trained models on 2D datasets.
----
-## Installation
+3. **Visual and Intuitive**:
+   - The 2D nature of the training data allows for easy visualization of decision boundaries and model behavior.
+   - Perfect for building intuition about how neural networks learn and generalize.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Ahtesham15/micrograd-.git
-   cd micrograd
+this repository contains 2 notebooks (poart1.ipynt and part2.ipynb), which i have created during my learning process as notes, which explain the building process quit briefly.
+  
 ---
 ## Acknowledgments
 
